@@ -138,3 +138,6 @@ DELETE FROM Employee
 WHERE Fname = 'Muhannad' AND SSN=17
 
 SELECT * FROM Employee
+
+select Fname + ' ' + Lname as [full name]
+from Employee
