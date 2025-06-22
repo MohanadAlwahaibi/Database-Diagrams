@@ -67,20 +67,22 @@ select * from Dependent;
 ALTER TABLE Employee
 add Dnum int foreign key (Dnum) REFERENCES Department (Dnum)
 
-ALTER TABLE Departement
-DROP CONSTRAINT FK__Departement__SSN__2D27B809
 
 alter table Employee
 DROP CONSTRAINT FK__Employee__Superv__29572725
 
-insert into Departement(Dname,Hiredate,Dnum,SSN)
+insert into Department(Dname,Hiredate,Dnum,SSN)
 values                 ('IT','1983-08-22',1,1)
 
-insert into Departement(Dname,Hiredate,Dnum,SSN)
+insert into Department(Dname,Hiredate,Dnum,SSN)
 values                 ('SC','1983-04-12',2,2)
+
+alter table Department
+DROP CONSTRAINT FK__Department__SSN__34C8D9D1
 
 insert into Employee(Fname,Lname,Gender,Supervisor,Birthdate,Dnum)
 values              ('Muhannad','alwahaibi',1,100,'1938-12-31',1)
+                    
 
 insert into Employee(Fname,Lname,Gender,Supervisor,Birthdate,Dnum)
 values              ('Ali','alnaabi',0,200,'1938-03-11',2)
