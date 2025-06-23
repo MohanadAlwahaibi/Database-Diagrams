@@ -151,6 +151,12 @@ Group BY StudentID
 HAVING COUNT(CourseID) > 1
 
 --3 - Calculate revenue per course (Price * enrollements)
-
-select count(*) "total enrollment" , CourseID
-from Enrollments
+select 
+    C.CourseID,
+	C.Title,
+	C.Price,
+	COUNT(E.EnrollmentID) AS Enrollments,
+	(C.Price * Count (E.EnrollmentID)) AS Revenue
+from Courses C
+JOIN Enrollments E ON C.CourseID = E.CourseID
+Group by C.CourseID, C.Title,C.Price
